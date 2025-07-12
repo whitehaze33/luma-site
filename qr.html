@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LUMA Payment QR</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2em;
+      background: #0a0a0a;
+      color: #fdfdfd;
+    }
+    img {
+      max-width: 300px;
+      width: 80%;
+      margin-bottom: 1em;
+    }
+    button {
+      background: #fff;
+      color: #000;
+      padding: 0.6em 1.2em;
+      border: none;
+      border-radius: 4px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    a {
+      display: block;
+      color: #58a6ff;
+      margin-top: 1em;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Send LUMA</h1>
+  <img src="LUMA_QR_Code.png" alt="LUMA Payment QR" />
+  <p id="wallet">ALdryYXJvMSQv24VtiDpAy8strMu6BsQFDUnmaEQBXoj</p>
+  <button onclick="copyWallet()">Copy Address</button>
+  <a href="solana:ALdryYXJvMSQv24VtiDpAy8strMu6BsQFDUnmaEQBXoj">Tap to Pay in Solana</a>
+
+  <script>
+    function copyWallet() {
+      const addr = document.getElementById("wallet").innerText;
+      navigator.clipboard.writeText(addr).then(() => {
+        alert("Wallet address copied!");
+      });
+    }
+  </script>
+</body>
+</html>
